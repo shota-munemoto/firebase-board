@@ -51,32 +51,29 @@ class App extends React.Component<Props, State> {
   public render() {
     return (
       <div>
-        <h1>Board</h1>
-        <form onSubmit={this.onSubmit}>
+        <h1 style={{ paddingInlineStart: 40 }}>Board</h1>
+        <form onSubmit={this.onSubmit} style={{ paddingInlineStart: 40 }}>
           <div>
-            <label htmlFor="author">Author</label>:
             <input
-              id="author"
               onChange={this.onChangeAuthor}
+              placeholder="Author"
               value={this.state.author}
             />
           </div>
           <div>
-            <label htmlFor="content">Content</label>:
             <input
-              id="content"
               onChange={this.onChangeContent}
+              placeholder="Content"
               value={this.state.content}
             />
-          </div>
-          <div>
+            &nbsp;
             <input
               type="submit"
               value="Submit"
             />
           </div>
         </form>
-        <ol reversed={true}>
+        <ol reversed={true} style={{ paddingInlineStart: 40 }}>
           {this.state.messages.map(message => {
             const messageData = message.data
             const createdAtDateString = messageData.createdAt ? messageData.createdAt.toDate().toLocaleString() : ''
